@@ -6,10 +6,12 @@
   <meta charset="utf-8">
   <style type="text/css">
     body {
-      background-image: url("gradient-background.jpg");
+      background: radial-gradient(yellow, orange, red);
     }
 
-    img { max-width: 100%; }
+    img {
+      max-width: 100%;
+    }
 
     .photo-container {
       width: 90%;
@@ -24,6 +26,12 @@
       /* equivalent to 49.5% of total browser width,
       to make calculating srcset easier for us :) */
       width: 55%;
+    }
+
+    header {
+      background-image: url(space-header.jpg);
+      background-size: cover;
+      /*background-repeat: no-repeat;*/
     }
   </style>
 </head>
@@ -54,11 +62,17 @@
       </div>
 
       <div class="photo-frame">
-        <img src="dragon.jpg" alt="a fire-breathing cat">
+        <img srcset="dragon.jpg 1920w, dragon-800.jpg 800w, dragon-400.jpg 400w"
+              sizes="(max-width: 800px) 400px, (max width: 1600px) 800px, (min-width: 1601px) 1200px"
+              src="dragon.jpg"
+              alt="a fire-breathing cat">
       </div>
 
       <div class="photo-frame">
-        <img src="grr.jpg" alt="a cat making a weird face">
+        <img srcset="grr.jpg 1920w, grr-800.jpg 800w, grr-400.jpg 400w"
+              sizes="(max-width: 800px) 400px, (max width: 1600px) 800px, (min-width: 1601px) 1200px"
+              src="grr.jpg"
+              alt="a cat making a weird face">
       </div>
     </div>
   </section>
